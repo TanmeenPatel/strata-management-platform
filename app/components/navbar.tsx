@@ -46,10 +46,11 @@ export default function Navbar() {
 								className="h-8 w-auto text-white"
 							/>
 							<span className="ml-2 text-xl font-bold text-white">
-								Strata Management
+								ABC Park Complex
 							</span>
 						</div>
-						<div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+
+						<div className="hidden sm:ml-6 sm:block">
 							<div className="flex space-x-4">
 								{navigation.map((item) => (
 									<a
@@ -92,6 +93,7 @@ export default function Navbar() {
 					))}
 				</div>
 			</DisclosurePanel>
+			
 		</Disclosure>
 	);
 }
