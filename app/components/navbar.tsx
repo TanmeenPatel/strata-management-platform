@@ -1,3 +1,5 @@
+"use client";
+
 import {
 	Disclosure,
 	DisclosureButton,
@@ -8,12 +10,13 @@ import {
 	MenuItems,
 } from "@headlessui/react";
 import { Bars3Icon, InboxStackIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { usePathname } from "next/navigation";
 
 const navigation = [
-	{ name: "Home", href: "/", current: true },
-	{ name: "Announcements", href: "/announcements", current: false },
-	{ name: "Report Issues", href: "/issues", current: false },
-	{ name: "FAQs", href: "/faqs", current: false },
+	{ name: "Home", href: "/"},
+	{ name: "Announcements", href: "/announcements"},
+	{ name: "Report Issues", href: "/issues"},
+	{ name: "FAQs", href: "/faqs"},
 ];
 
 function classNames(...classes: (string | boolean | undefined | null)[]) {
@@ -21,6 +24,7 @@ function classNames(...classes: (string | boolean | undefined | null)[]) {
 }
 
 export default function Navbar() {
+	const pathname = usePathname();
 	return (
 		<Disclosure as="nav" className="bg-zinc-800">
 			<div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -56,13 +60,11 @@ export default function Navbar() {
 									<a
 										key={item.name}
 										href={item.href}
-										aria-current={item.current ? "page" : undefined}
-										className={classNames(
-											item.current
+										className={`rounded-md px-3 py-2 text-sm font-medium
+											${pathname === item.href
 												? "bg-zinc-900 text-white"
-												: "text-zinc-300 hover:bg-zinc-700 hover:text-white",
-											"rounded-md px-3 py-2 text-sm font-medium"
-										)}
+												: "text-zinc-300 hover:bg-zinc-700 hover:text-white"}
+										`}
 									>
 										{item.name}
 									</a>
@@ -72,7 +74,7 @@ export default function Navbar() {
 					</div>
 				</div>
 			</div>
-			
+
 			<DisclosurePanel className="sm:hidden">
 				<div className="space-y-1 px-2 pt-2 pb-3">
 					{navigation.map((item) => (
@@ -80,13 +82,11 @@ export default function Navbar() {
 							key={item.name}
 							as="a"
 							href={item.href}
-							aria-current={item.current ? "page" : undefined}
-							className={classNames(
-								item.current
-									? "bg-gray-900 text-white"
-									: "text-gray-300 hover:bg-gray-700 hover:text-white",
-								"block rounded-md px-3 py-2 text-base font-medium"
-							)}
+							className={`rounded-md px-3 py-2 text-sm font-medium
+								${pathname === item.href
+									? "bg-zinc-900 text-white"
+									: "text-zinc-300 hover:bg-zinc-700 hover:text-white"}
+							`}
 						>
 							{item.name}
 						</DisclosureButton>
