@@ -42,50 +42,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="px-4 sm:px-6 py-12"> 
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold">Meet Our Team</h2>
-          <p className="mt-2 text-gray-600">Dedicated professionals ensuring the best for our community.</p>
-        </div>
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-white p-6 rounded-lg shadow-md text-center">
-            <img
-              src="/team_member_1.jpg"
-              alt="Team Member 1"
-              className="w-24 h-24 mx-auto rounded-full mb-4"
-            />
-            <h3 className="font-semibold">John Doe</h3>
-            <p className="text-sm text-gray-500">Community Manager</p>
-            <p className="mt-2 text-sm text-gray-600">
-              John ensures smooth operations and fosters a strong sense of community.
-            </p>
-          </div>
-          <div className="bg-white p-6 rounded-lg shadow-md text-center">
-            <img
-              src="/team_member_2.jpg"
-              alt="Team Member 2"
-              className="w-24 h-24 mx-auto rounded-full mb-4"
-            />
-            <h3 className="font-semibold">Jane Smith</h3>
-            <p className="text-sm text-gray-500">Facilities Manager</p>
-            <p className="mt-2 text-sm text-gray-600">
-              Jane oversees the maintenance and quality of our amenities.
-            </p>
-          </div>
-          <div className="bg-white p-6 rounded-lg shadow-md text-center">
-            <img
-              src="/team_member_3.jpg"
-              alt="Team Member 3"
-              className="w-24 h-24 mx-auto rounded-full mb-4"
-            />
-            <h3 className="font-semibold">Mark Spencer</h3>
-            <p className="text-sm text-gray-500">Resident Liaison</p>
-            <p className="mt-2 text-sm text-gray-600">
-              Mark addresses resident concerns and ensures satisfaction.
-            </p>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

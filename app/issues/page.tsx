@@ -1,3 +1,5 @@
+const supportEmail = process.env.NEXT_PUBLIC_API_URL;
+
 export default function Home() {
 	return (
 		<div>
@@ -14,7 +16,7 @@ export default function Home() {
 					<h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 text-gray-400">Issue Form</h2>
 					<p className="mb-4">Submit this form to register your issue with any amenities or services.</p>
 				</div>
-				<form className="px-4" action="https://formsubmit.co/53893ba62a04511be5453e6f4aa8579b" method="POST">
+				<form className="px-4" action={supportEmail} method="POST">
 					<div className="mb-4">
 						<label htmlFor="tenantName" className="block mb-1">Name</label>
 						<input
