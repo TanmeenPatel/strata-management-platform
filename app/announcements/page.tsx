@@ -12,7 +12,7 @@ export default function Home() {
 				</div>
 			</div>
 			<section className="py-8 px-8">
-				<h2 className="mx-auto max-w-3xl lg:mx text-2xl text-center">
+				<h2 className="ml-6 mr-6 max-w-3xl lg:mx text-lg text-left">
 					View this page to see all announcements for ABC Park Complex and the strata committee.
 				</h2>
 				<AnnouncementCard

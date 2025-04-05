@@ -3,6 +3,14 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div>
+      <div className="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32 h-full">
+				<img src="/home.jpg" alt="" className="absolute inset-0 -z-10 size-full object-cover object-right md:object-center"/>
+				<div className="mx-auto max-w-7xl px-6 lg:px-8">
+					<div className="mx-auto max-w-2xl py-20">
+						<h1 className="text-center mx-auto text-5xl font-semibold tracking-tight text-white sm:text-7xl">ABC Park Complex</h1>
+					</div>
+				</div>
+			</div>
       <div className="flex items-center justify-center h-screen px-8 lg:px-16">
         <div>
           <h1 className="text-left sm:text-3xl lg:text-4xl font-bold">Welcome to ABC Park Complex!</h1>
