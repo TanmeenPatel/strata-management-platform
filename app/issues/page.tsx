@@ -12,12 +12,12 @@ export default function Home() {
 				</div>
 			</div>
 			<section className="bg-white bg-gray-900">
-				<div className="py-8 px-4 mx-auto max-w-screen-xl sm:py-8 lg:px-6">
+				<div className="py-8 px-4 max-w-screen-xl sm:py-8 lg:px-6">
 					<h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 text-gray-400">Issue Form</h2>
 					<p className="mb-4">Submit this form to register your issue with any amenities or services.</p>
 				</div>
-				<form className="px-4" action={supportEmail} method="POST">
-					<div className="mb-4">
+				<form className="px-4 lg:px-6" action={supportEmail} method="POST">
+					<div className="mb-4 max-w-2xl">
 						<label htmlFor="tenantName" className="block mb-1">Name</label>
 						<input
 						type="text"
@@ -28,7 +28,7 @@ export default function Home() {
 						/>
 					</div>
 					
-					<div className="mb-4">
+					<div className="mb-4 max-w-2xl">
 						<label htmlFor="tenantEmail" className="block mb-1">Email</label>
 						<input
 						type="email"
@@ -39,7 +39,7 @@ export default function Home() {
 						/>
 					</div>
 					
-					<div className="mb-4">
+					<div className="mb-4 max-w-2xl">
 						<label htmlFor="tenantPhone" className="block mb-1">Phone Number</label>
 						<input
 						type="tel"
@@ -49,7 +49,7 @@ export default function Home() {
 						/>
 					</div>
 					
-					<div className="mb-4">
+					<div className="mb-4 max-w-2xl">
 						<label htmlFor="address" className="block mb-1">Unit Number</label>
 						<input
 						type="text"
@@ -60,7 +60,7 @@ export default function Home() {
 						/>
 					</div>
 					
-					<div className="mb-4">
+					<div className="mb-4 max-w-2xl">
 						<label htmlFor="description" className="block mb-1">Issue Description</label>
 						<textarea
 						id="description"
@@ -71,7 +71,7 @@ export default function Home() {
 						/>
 					</div>
 					
-					<div className="mb-4">
+					<div className="mb-4 max-w-2xl">
 						<label htmlFor="urgency" className="block mb-1">Urgency Level</label>
 						<select
 						id="urgency"
@@ -88,7 +88,7 @@ export default function Home() {
 					
 					<button 
 						type="submit" 
-						className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:bg-blue-300"
+						className="px-4 py-2 mb-5 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:bg-blue-300"
 					>Submit</button>
 				</form>	
 			</section>

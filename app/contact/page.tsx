@@ -10,7 +10,7 @@ export default function Contact() {
 				</div>
 			</div>
             <section className="px-4 sm:px-6 py-12"> 
-                <div className="py-8 px-4 mx-auto max-w-screen-xl sm:py-8 lg:px-6">
+                <div className="py-8 px-4 max-w-screen-xl sm:py-8 lg:px-6">
 					<h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 text-gray-400">Meet Our Team</h2>
 					<p className="mb-4">Dedicated professionals ensuring the best for our community.</p>
 				</div>
@@ -52,7 +52,7 @@ export default function Contact() {
                         </p>
                     </div>
                 </div>
-                <div className="pt-16 px-4 mx-auto max-w-screen-xl lg:px-6">
+                <div className="pt-16 px-4 max-w-screen-xl lg:px-6">
 					<h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 text-gray-400">Contact the Team</h2>
 					<p className="mb-4">You can contact the strata committee via email at <i><a href="mailto:abcparkstrata@gmail.com" className="text-blue-600 dark:text-blue-500 hover:underline">abcparkstrata@gmail.com</a></i> or give us a call at <i>+61 123456789</i></p>
 				</div>
