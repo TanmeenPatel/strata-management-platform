@@ -13,7 +13,7 @@ export default function Home() {
 			</div>
 			<section className="py-8 px-8">
 				<h2 className="ml-6 mr-6 max-w-3xl lg:mx text-lg text-left">
-					View this page to see all announcements for ABC Park Complex and the strata committee.
+					View this page to see all announcements for ABC Park Complex from the strata committee.
 				</h2>
 				<AnnouncementCard
 					title = "Upcoming Annual General Meeting (AGM) 📢"
@@ -24,10 +24,11 @@ export default function Home() {
 				<AnnouncementCard
 					title = "Scheduled Lift Maintenance 🚧"
 					description = "The lift in Tower A will be out of service for scheduled maintenance. Please use the stairs or the lift in Tower B. We apologize for any inconvenience."
+					date = "25th January, 2025"
 				/>
 				<AnnouncementCard
 					title = "Parking Reminder 🚘"
-					description = "Unauthorized vehicles have been reported in resident parking spots. Please ensure your visitors park in designated guest spaces. Violators may be towed at their expense."
+					description = "Unauthorized vehicles in resident parking spots will be reported. Please ensure your visitors park in designated guest spaces. Violators may be towed at their expense."
 				/>
 			</section>
 		</div>

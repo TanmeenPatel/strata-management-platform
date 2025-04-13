@@ -25,32 +25,32 @@ export default function Home() {
       <section className="px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold">Our Amenities</h2>
-          <p className="mt-2 mb-4 text-gray-600">Enjoy top-tier facilities designed for comfort and convenience.</p>
+          <p className="mt-2 mb-4 text-gray-600">Enjoy top-tier facilities designed for comfort and convenience</p>
         </div>
         <div className="mb-8 grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h3 className="font-semibold">Swimming Pool</h3>
-            <p className="text-sm text-gray-500">Relax and unwind at our temperature-controlled pool.</p>
+            <p className="text-sm text-gray-500">Relax and unwind at our temperature-controlled pool</p>
           </div>
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h3 className="font-semibold">Gym & Fitness Center</h3>
-            <p className="text-sm text-gray-500">Stay active with state-of-the-art equipment.</p>
+            <p className="text-sm text-gray-500">Stay active with state-of-the-art equipment</p>
           </div>
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h3 className="font-semibold">Community Hall</h3>
-            <p className="text-sm text-gray-500">Perfect for events and gatherings.</p>
+            <p className="text-sm text-gray-500">Perfect for events and gatherings</p>
           </div>
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h3 className="font-semibold">Rooftop Garden</h3>
-            <p className="text-sm text-gray-500">A tranquil green space to relax, socialize, or enjoy the view.</p>
+            <p className="text-sm text-gray-500">A tranquil green space to relax, socialize, or enjoy the view</p>
           </div>
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h3 className="font-semibold">Underground Parking</h3>
-            <p className="text-sm text-gray-500">Ample parking space available for residents and guests.</p>
+            <p className="text-sm text-gray-500">Ample parking space available for residents and guests</p>
           </div>
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h3 className="font-semibold">24/7 Security</h3>
-            <p className="text-sm text-gray-500">Surveillance cameras and on-site personnel ensure round-the-clock safety.</p>
+            <p className="text-sm text-gray-500">Surveillance cameras and on-site personnel</p>
           </div>
         </div>
       </section>
