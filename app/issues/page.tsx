@@ -1,4 +1,4 @@
-const supportEmail = process.env.NEXT_PUBLIC_API_URL;
+"use client";
 
 export default function Home() {
 	return (
@@ -11,12 +11,36 @@ export default function Home() {
 					</div>
 				</div>
 			</div>
-			<section className="bg-white bg-gray-900">
-				<div className="py-8 px-4 max-w-screen-xl sm:py-8 lg:px-6">
+			<section className="px-4 lg:px-6 bg-white bg-gray-900">
+				<div className="py-8 max-w-screen-xl sm:py-8">
 					<h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 text-gray-400">Issue Form</h2>
 					<p className="mb-4">Submit this form to register your issue with any amenities or services.</p>
 				</div>
-				<form className="px-4 lg:px-6" action={supportEmail} method="POST">
+				<form
+					onSubmit={async (e) => {
+						e.preventDefault(); 
+						const form = e.currentTarget as HTMLFormElement;
+						
+						const res = await fetch("/api/report-issue", {
+							method: "POST",
+							headers: { "Content-Type": "application/json" },
+							body: JSON.stringify({
+								name: (form.elements.namedItem("tenantName") as HTMLInputElement).value,
+								email: (form.elements.namedItem("tenantEmail") as HTMLInputElement).value,
+								address: (form.elements.namedItem("address") as HTMLInputElement).value,
+								phone: (form.elements.namedItem("tenantPhone") as HTMLInputElement).value,
+								description: (form.elements.namedItem("description") as HTMLTextAreaElement).value,
+								urgency: (form.elements.namedItem("urgency") as HTMLSelectElement).value,
+							}),
+						});
+
+						if (res.ok) {
+							alert("Message sent!");
+						} else {
+							alert("Error sending message.");
+						}
+					}}
+				>
 					<div className="mb-4 max-w-2xl">
 						<label htmlFor="tenantName" className="block mb-1">Name</label>
 						<input

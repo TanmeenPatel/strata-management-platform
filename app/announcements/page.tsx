@@ -1,6 +1,32 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import AnnouncementCard from "../components/announcementcard";
 
+type Announcement = {
+	title: string;
+	description: string;
+	date?: string;
+	venue?: string;
+};
+
 export default function Home() {
+	const [announcements, setAnnouncements] = useState<Announcement[]>([]);
+
+	useEffect(() => {
+		const fetchAnnouncements = async () => {
+			try {
+				const res = await fetch("/api/get-announcements");
+				const data = await res.json();
+				setAnnouncements(data);
+			} catch (err) {
+				console.error("Failed to fetch announcements:", err);
+			}
+		};
+
+		fetchAnnouncements();
+	}, []);
+
 	return (
 		<div>
 			<div className="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32 h-full">
@@ -15,21 +41,16 @@ export default function Home() {
 				<h2 className="ml-6 mr-6 max-w-3xl lg:mx text-lg text-left">
 					View this page to see all announcements for ABC Park Complex from the strata committee.
 				</h2>
-				<AnnouncementCard
-					title = "Upcoming Annual General Meeting (AGM) 📢"
-					description = "We invite all owners and tenants to attend the upcoming AGM. Key topics include budget approvals, building maintenance updates, and community initiatives. Your participation is important!"
-					venue = "Events Hall - Common Room"
-					date = "14th January, 2025"
-				/>
-				<AnnouncementCard
-					title = "Scheduled Lift Maintenance 🚧"
-					description = "The lift in Tower A will be out of service for scheduled maintenance. Please use the stairs or the lift in Tower B. We apologize for any inconvenience."
-					date = "25th January, 2025"
-				/>
-				<AnnouncementCard
-					title = "Parking Reminder 🚘"
-					description = "Unauthorized vehicles in resident parking spots will be reported. Please ensure your visitors park in designated guest spaces. Violators may be towed at their expense."
-				/>
+				
+				{announcements.map((a, index) => (
+					<AnnouncementCard
+						key={index}
+						title={a.title}
+						description={a.description}
+						date={a.date}
+						venue={a.venue}
+					/>
+				))}
 			</section>
 		</div>
 	);

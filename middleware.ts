@@ -1,3 +1,5 @@
+export const runtime = 'experimental-edge';
+
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
@@ -11,7 +13,6 @@ export function middleware(request: NextRequest) {
     console.log('Geo Info:', { city, country });
 
     if (city && city !== "Sydney") {
-        console.log('Geo Info:', { city, country });
         return NextResponse.redirect(new URL('/blocked', request.url));
     }
 
