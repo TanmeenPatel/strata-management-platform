@@ -6,7 +6,7 @@ export async function POST(req) {
     const { name, email } = await req.json();
     const client = await clientPromise;
     const db = await client.db("users");
-
+    await db.collection('users').deleteMany({});
     await db.collection('users').insertOne({name, email});
     (await cookies()).set("username", name, { maxAge: 60 * 60 * 24 * 365 });
     return NextResponse.json({message:"user registered!"});
