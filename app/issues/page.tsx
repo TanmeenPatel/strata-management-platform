@@ -56,7 +56,7 @@ export default function Issues() {
 				description: '',
 				urgency: 'medium',
 			});
-		} catch (error) {
+		} catch (error:any) {
 			console.error('Error submitting form:', error);
 			setSubmitStatus({
 			success: false,
