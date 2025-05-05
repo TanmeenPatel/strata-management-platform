@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 export default function Issues() {
-	const router = useRouter();
 	const [formData, setFormData] = useState({
 		name: '',
 		email: '',

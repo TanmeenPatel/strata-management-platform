@@ -1,6 +1,14 @@
 import Image from "next/image";
+import { redirect } from "next/navigation";
+import { cookies } from "next/headers";
+import SignupForm from "./components/signup";
 
-export default function Home() {
+export default async function Home() {
+  const cookiesStore = await cookies();
+  const username = cookiesStore.get("username")?.value;
+  if (!username) {
+    redirect("/signup"); 
+  }
   return (
     <div>
       <div className="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32 h-full">
@@ -13,14 +21,11 @@ export default function Home() {
 			</div>
       <div className="flex items-center justify-center py-24 px-4 lg:px-6">
         <div>
-          <h1 className="text-center sm:text-3xl lg:text-4xl font-bold">Welcome to ABC Park Complex!</h1>
+          <h1 className="text-center sm:text-3xl lg:text-4xl font-bold">Welcome to ABC Park Complex{", "+username}!</h1>
           <p className="mt-4 text-center max-w-4xl sm:text-md lg:text-lg">
           This is the official strata website for ABC Park Complex, a modern residential community designed for comfort, convenience, and a vibrant lifestyle. Nestled in the heart of the city, our complex offers state-of-the-art amenities, beautifully landscaped gardens, and a strong sense of community.
           </p>
         </div>
-        {/* <div className="max-w-lg ml-8 shrink-0">
-          <img src="/landing_page.jpg" alt="Image of residential complex" className="w-full max-w-md h-auto"  />
-        </div> */}
       </div>
       <section className="px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center">
