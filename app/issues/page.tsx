@@ -1,6 +1,7 @@
 "use client";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import Cookies from "js-cookie";
 
 export default function Issues() {
 	const [formData, setFormData] = useState({
@@ -11,6 +12,18 @@ export default function Issues() {
 		description: '',
 		urgency: 'medium',
 	});
+	const [placeholderEmail, setPlaceholderEmail] = useState("");
+	const [placeholderName, setPlaceholderName] = useState("");
+
+	useEffect(() => {
+		const storedName = Cookies.get("username");
+		const storedEmail = Cookies.get("email");
+		if (storedName && storedEmail) {
+			setPlaceholderName(storedName);
+			setPlaceholderEmail(storedEmail);
+		}
+	}, []);
+
 	const [isSubmitting, setIsSubmitting] = useState(false);
 	const [submitStatus, setSubmitStatus] = useState({ success: false, message: '' });
 
@@ -93,6 +106,7 @@ export default function Issues() {
 							type="text"
 							id="name"
 							name="name"
+							placeholder={placeholderName}
 							value={formData.name}
 							onChange={handleChange}
 							className="w-full p-2 border rounded"
@@ -106,6 +120,7 @@ export default function Issues() {
 						type="email"
 						id="email"
 						name="email"
+						placeholder={placeholderEmail}
 						value={formData.email}
 						onChange={handleChange}
 						className="w-full p-2 border rounded"
