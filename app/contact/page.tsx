@@ -5,7 +5,7 @@ export default function Contact() {
 				<img src="/contact.jpg" alt="" className="absolute inset-0 -z-10 size-full object-cover object-right md:object-center"/>
 				<div className="mx-auto max-w-7xl px-6 lg:px-8">
 					<div className="mx-auto max-w-2xl py-20">
-						<h1 className="text-center mx-auto text-5xl font-semibold tracking-tight text-white sm:text-7xl">Contact Us</h1>
+						<h1 className="text-center mx-auto text-5xl font-semibold tracking-tight text-white sm:text-7xl">About Us</h1>
 					</div>
 				</div>
 			</div>
@@ -54,7 +54,7 @@ export default function Contact() {
                 </div>
                 <div className="pt-16 px-4 max-w-screen-xl lg:px-6">
 					<h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 text-gray-400">Contact the Team</h2>
-					<p className="mb-4">You can contact the strata committee via email at <i><a href="mailto:abcparkstrata@gmail.com" className="text-blue-600 dark:text-blue-500 hover:underline">abcparkstrata@gmail.com</a></i> or give us a call at <i>+61 123456789</i></p>
+                    Click <a href="api/info.php" className="text-blue-600 dark:text-blue-500 hover:underline">this link</a> to get the strata committee contact details.
 				</div>
             </section>
         </div>

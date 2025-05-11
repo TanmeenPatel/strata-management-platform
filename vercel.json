@@ -1,6 +1,15 @@
 {
     "version": 2,
-    "builds": [
-        { "src": "package.json", "use": "@vercel/next" }
-    ]
+    "functions": {
+        "api/*.php": {
+            "runtime": "vercel-php@0.7.3",
+            "excludeFiles": "{node_modules/**,public/**,.next/**}"
+        }
+    },
+    "routes": [
+        { "src": "/api/(.*\\.php)", "dest": "/api/$1" },
+        { "src": "/(.*)", "dest": "/$1" }
+    ],
+    "buildCommand": "next build",
+    "framework": "nextjs"
 }

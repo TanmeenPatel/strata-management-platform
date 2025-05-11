@@ -20,7 +20,7 @@ export async function POST(request) {
         message: 'Issue report submitted successfully', 
         issueId: result.insertedId 
     }, { status: 201 });
-    
+
     } catch (error) {
         console.error('Error in report-issue API:', error);
         return NextResponse.json({ 

@@ -1,5 +1,6 @@
-import { getAnnouncements } from "../../lib/queries/getAnnouncements";
+"use client"
 import AnnouncementCard from "../components/announcementcard";
+import { useState, useEffect } from "react";
 
 type Announcement = {
 	title: string;
@@ -8,8 +9,19 @@ type Announcement = {
 	venue?: string;
 };
 
-export default async function AnnouncementsPage() {
-	const announcements = await getAnnouncements();
+export default function AnnouncementsPage() {
+	const [announcements, setAnnouncements] = useState<Announcement[]>([]);
+	useEffect(() => {
+		// Fetch announcements when the component mounts
+		const fetchAnnouncements = async () => {
+			const res = await fetch("/api/announcements");
+			const data = await res.json();
+			setAnnouncements(data);
+		};
+
+		fetchAnnouncements();
+	}, []); // Empty dependency array ensures this runs only once
+
 	return (
 		<div>
 			<div className="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32 h-full">
